@@ -1,0 +1,53 @@
+﻿@model Entity_Layer.Concrete.Portfolio
+@{
+    ViewData["Title"] = "UpdatePortfolio";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+<div class="card-header border-0">
+    <h3 class="mb-0">Yetenek Güncelleme</h3>
+</div>
+@using (Html.BeginForm("UpdatePortfolio", "Portfolio", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <p class="card-description">Yeni Deneyim Ekleme Paneli</p>
+                <form class="forms-sample">
+                    @Html.HiddenFor(m => m.portfolioID)
+                    <br />
+                    @Html.Label("Proje İsmi")
+
+                    @Html.TextBoxFor(m => m.portfolioTitle, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.portfolioTitle)
+                    <br />
+                    <label>Görsel 1</label>
+                    @Html.TextBoxFor(m => m.portfolioImageUrl, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.portfolioImageUrl)
+                    <br />
+                    <label>Görsel 2</label>
+                    @Html.TextBoxFor(m => m.portfolioImageUrl2, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.portfolioImageUrl2)
+                    <br />
+                    <label>Proje URL</label>
+                    @Html.TextBoxFor(m => m.projectUrl, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.projectUrl)
+                    <br />
+                    <label>Fiyat</label>
+                    @Html.TextBoxFor(m => m.portfolioPrice, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.portfolioPrice)
+                    <br />
+                    <label>İlerleme</label>
+                    @Html.TextBoxFor(m => m.portfolioValue, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.portfolioValue)
+                    <br />
+                    <label>Platform</label>
+                    @Html.TextBoxFor(m => m.portfolioPlatform, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.portfolioPlatform)
+                    <br />
+                    <button class="btn btn-outline-primary">Kaydet</button>
+                </form>
+            </div>
+        </div>
+    </div>
+}
+

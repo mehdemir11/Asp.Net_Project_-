@@ -1,0 +1,35 @@
+﻿@model Entity_Layer.Concrete.SocialMedia
+@{
+    ViewData["Title"] = "AddSocialMedia";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+@using (Html.BeginForm("AddSocialMedia", "SocialMedia", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <p class="card-description">Platform Ekleme Paneli</p>
+                <form class="forms-sample">
+                    <div class="form-group">
+                        <label>Platform</label>
+                        <input type="text" class="form-control" name="socialMediaTitle">
+                    </div>
+                    <div class="form-group">
+                        <label>Platform Tekrar</label>
+                        <input type="text" class="form-control" name="socialMediaIcon">
+                    </div>
+                    <div class="form-group">
+                        <label>Platform URL</label>
+                        <input type="text" class="form-control" name="socialMediaUrl">
+                    </div>
+                    <div class="form-group">
+                        <label>Kullaım Durumu</label>
+                        <textarea class="form-control" placeholder="Platformu güncel olarak kullanmıyorsanız 0 giriniz. Aksi takdirde boş geçiniz." name="status" rows="1"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-outline-info">Kaydet</button>
+                    <button class="btn btn-outline-danger">İptal</button>
+                </form>
+            </div>
+        </div>
+    </div>
+}

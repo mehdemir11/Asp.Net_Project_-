@@ -1,0 +1,39 @@
+﻿@model Entity_Layer.Concrete.SocialMedia
+@{
+    ViewData["Title"] = "UpdateSocialMedia";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+@using (Html.BeginForm("UpdateSocialMedia", "SocialMedia", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <p class="card-description">Platfrom Güncelleme Paneli</p>
+                <form class="forms-sample">
+                    <div class="form-group">
+                        <label>Platform ID</label>
+                        @Html.TextBoxFor(x => x.socialMediaID, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Platform</label>
+                        @Html.TextBoxFor(x => x.socialMediaTitle, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Platform Tekrar</label>
+                        @Html.TextBoxFor(x => x.socialMediaIcon, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Platform Url</label>
+                        @Html.TextBoxFor(x => x.socialMediaUrl, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Kullanım Durumu</label>
+                        @Html.TextBoxFor(x => x.status, new { @class = "form-control" })
+                    </div>
+                    <button type="submit" class="btn btn-outline-info">Kaydet</button>
+                    <button class="btn btn-outline-danger">İptal</button>
+                </form>
+            </div>
+        </div>
+    </div>
+}

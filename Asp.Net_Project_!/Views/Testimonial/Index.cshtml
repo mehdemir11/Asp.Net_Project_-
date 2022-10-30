@@ -1,0 +1,54 @@
+﻿@using Entity_Layer.Concrete
+@model List<Testimonial>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="row ">
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Referanslar</h3>
+                <div class="table-responsive">
+                    <table class="table">
+                        @foreach (var item in Model)
+                        {
+                            <thead>
+                                <tr>
+                                    <th> # </th>
+                                    <th> Resim - İsim Soyisim</th>
+                                    <th> Şirket - Görev Yeri</th>
+                                    <th> @item.testimonialClientName'in Yorumu </th>
+                                    <th> Seçenek </th>
+                                    <th> Unvan - Görev </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td> @item.testimonialID </td>
+                                    <td>
+                                        <img src="@item.testimonialImageUrl" alt="image" />
+                                        <span class="pl-2">@item.testimonialClientName</span>
+                                    </td>
+                                    <td> @item.testimonialCompany </td>
+                                    @if (item.testimonialComment.Length > 25)
+                                    {
+                                        <td>@item.testimonialComment.Substring(0, 25)...</td>
+                                    }
+                                    else
+                                    {
+                                        <td>@item.testimonialComment</td>
+                                    }
+                                    <td><a href="/Testimonial/UpdateTestimonial/@item.testimonialID" class="btn btn-outline-success">Detayı Gör</a></td>
+                                    <td> @item.testimonialTask </td>
+                                </tr>
+                            </tbody>
+                        }
+                    </table>
+                    <a href="/Testimonial/AddTestimonial/" class="btn btn-outline-behance">Referans Ekle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

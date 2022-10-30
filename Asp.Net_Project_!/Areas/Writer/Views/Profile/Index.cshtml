@@ -1,0 +1,50 @@
+﻿@model Asp.Net_Project__.Areas.Writer.Models.UserEditViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
+}
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Profil Bilgilerini Güncelle</h4>
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="exampleInputName1">Adın</label>
+                    <input type="text" asp-for="Name"  class="form-control" id="exampleInputName1" placeholder="Ad">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail3">Soyadın</label>
+                    <input type="text" asp-for="Surname"  class="form-control" id="exampleInputEmail3" placeholder="Soyad">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail3">e-Posta Adresin</label>
+                    <input type="email" asp-for="Email"  class="form-control" id="exampleInputEmail3" placeholder="e-Posta">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword4">Şifren</label>
+                    <input type="password" asp-for="Password" class="form-control" id="exampleInputEmail3" placeholder="Şifreniz">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword4">Şifreni Onayla</label>
+                    <input type="password" asp-for="PasswordConfirm" class="form-control" id="exampleInputEmail3" placeholder="Şifreyi Onaylayınız">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail3">Telefon Numaran</label>
+                    <input type="tel" asp-for="PhoneNumber" class="form-control" id="exampleInputEmail3" placeholder="Telefon Numarası">
+                </div>
+                <div class="form-group">
+                    <label>Resmini bulabiliriz.</label>
+                    <input type="file" asp-for="Picture">
+                    @*<div class="input-group col-xs-12">
+                        <input type="text" class="form-control file-upload-info" disabled placeholder="Resim Yükle">
+                        <span class="input-group-append">
+                            <button class="file-upload-browse btn btn-primary" type="button">Yükle</button>
+                        </span>
+                    </div>*@
+                </div>
+                <button type="submit" class="btn btn-outline-primary mr-2">Kaydet</button>
+                <button class="btn btn-outline-danger">İptal</button>
+            </form>
+        </div>
+    </div>
+</div>

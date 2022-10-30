@@ -1,0 +1,54 @@
+﻿@model Entity_Layer.Concrete.About
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Profilim</h3>
+</div>
+@using (Html.BeginForm("Index", "About", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <form class="forms-sample">
+                    <div class="form-group">
+                        <label>ID</label>
+                        @Html.TextBoxFor(x => x.aboutID, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Başlık</label>
+                        @Html.TextBoxFor(x => x.aboutTitle, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>e-Posta Adresi</label>
+                        @Html.TextBoxFor(x => x.aboutMail, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Yaş</label>
+                        @Html.TextBoxFor(x => x.aboutAge, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Telefon Numarası</label>
+                        @Html.TextBoxFor(x => x.aboutPhone, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Adres</label>
+                        @Html.TextBoxFor(x => x.aboutAddress, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Resim Yolu</label>
+                        @Html.TextBoxFor(x => x.aboutImageUrl, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Açıklama</label>
+                        @Html.TextAreaFor(x => x.aboutDescription, 10, 3, new { @class = "form-control" })
+                    </div>
+                    <button type="submit" class="btn btn-outline-info">Kaydet</button>
+                    <button class="btn btn-outline-danger">İptal</button>
+                </form>
+            </div>
+        </div>
+    </div>
+}
+

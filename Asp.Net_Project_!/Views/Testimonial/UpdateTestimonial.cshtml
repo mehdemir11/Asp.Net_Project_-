@@ -1,0 +1,41 @@
+﻿@model Entity_Layer.Concrete.Testimonial
+@{
+    ViewData["Title"] = "UpdateTestimonial";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+<div class="card-header border-0">
+    <h3 class="mb-0">Referans Detay Paneli</h3>
+</div>
+@using (Html.BeginForm("UpdateTestimonial", "Testimonial", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <form class="forms-sample">
+                    <div class="form-group">
+                        <label>ID</label>
+                        @Html.TextBoxFor(x => x.testimonialID, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>İsim Soyisim</label>
+                        @Html.TextBoxFor(x => x.testimonialClientName, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Şirket - Görev Yeri</label>
+                        @Html.TextBoxFor(x => x.testimonialCompany, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Yorum</label>
+                        @Html.TextAreaFor(x => x.testimonialComment,3,6, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Görev</label>
+                        @Html.TextBoxFor(x => x.testimonialTask, new { @class = "form-control" })
+                    </div>
+                    <button  type="submit" class="btn btn-outline-info">Güncelle</button>
+                    <a href="/Testimonial/Index/" class="btn btn-outline-behance">Geri Dön</a>
+                </form>
+            </div>
+        </div>
+    </div>
+}

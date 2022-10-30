@@ -1,0 +1,43 @@
+﻿@model Entity_Layer.Concrete.Contact
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_NewAdminLayout.cshtml";
+}
+
+<div class="card-header border-0">
+    <h3 class="mb-0">Alt İletişim Paneli</h3>
+</div>
+@using (Html.BeginForm("Index", "PortfoliosContact", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <form class="forms-sample">
+                    <div class="form-group">
+                        <label>ID</label>
+                        @Html.TextBoxFor(x => x.contactID, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Başlık</label>
+                        @Html.TextBoxFor(x => x.contactTitle, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Açıklama</label>
+                        @Html.TextAreaFor(x => x.contactDescription,3,6, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>e-Mail</label>
+                        @Html.TextBoxFor(x => x.contactMail, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label>Telefon Numarası</label>
+                        @Html.TextBoxFor(x => x.contactPhone, new { @class = "form-control" })
+                    </div>
+                    <button type="submit" class="btn btn-outline-info">Kaydet</button>
+                    <button class="btn btn-outline-danger">İptal</button>
+                </form>
+            </div>
+        </div>
+    </div>
+}
+
